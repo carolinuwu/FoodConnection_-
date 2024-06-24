@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Explore";
+}
+
+
+<h1> Navegar en el sitio </h1>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Recetas" asp-action="Search">Buscar Receta</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Recetas" asp-action="Create">Subir Receta</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Recetas" asp-action="Index">Mostrar Recetas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Recetas" asp-action="RecetasXTipo">Recetas por tipo </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Restaurantes" asp-action="Index"> Explorar restaurantes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Puntajes" asp-action="Create">Puntuar Restaurante</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" asp-controller="Puntajes" asp-action="Index">Puntuaciones a Restaurantes</a>
+            </li>
+         
+        </ul>
+    </div>
+</nav>

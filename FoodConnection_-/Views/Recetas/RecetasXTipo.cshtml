@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FoodConnection__.Models.Receta>
+@{
+    ViewData["Title"] = "RecetasXTipo";
+}
+
+
+<h1>Recetas por tipo </h1>
+
+<p>
+
+
+    @using (Html.BeginForm("RecetasXTipo", "Recetas", FormMethod.Get))
+    {
+        <div class="form-group">
+            <label>Filtrar por tipo de cocina :</label>
+            @Html.DropDownList("tipo", ViewBag.Tipo as SelectList, "-", new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-primary">Filtrar</button>
+    }
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+@foreach (var item in Model)
+{
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipo)
+        </td>
+                <td>
+                    <img src="@Url.Content(item.PathImagen)" />
+                </td>
+
+    </tr>
+}
+ 
+</table>
+<input name="action" onclick="history.back()" type="submit" value="Volver atras" />

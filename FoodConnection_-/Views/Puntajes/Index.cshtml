@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FoodConnection__.Models.Puntaje>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Puntuaciones</h1>
+
+ 
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PuntajeNumerico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Comentario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Restaurante)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PuntajeNumerico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Comentario)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Restaurante.Nombre)
+            </td>
+                <td>
+                    <img src="@Url.Content(item.Restaurante.PathImagen)" />
+                </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<input name="action" onclick="history.back()" type="submit" value="Volver atras" />
